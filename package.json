@@ -45,7 +45,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
     "jest": "^27.0.5",
-    "lint-staged": "^10.5.4",
+    "lint-staged": "^11.1.2",
     "nuxt-windicss": "^1.1.1",
     "prettier": "^2.3.2",
     "simple-git-hooks": "^2.6.1",
