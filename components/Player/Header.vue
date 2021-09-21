@@ -6,7 +6,7 @@
         aria-controls="playlist"
         aria-expanded="false"
         aria-label="Open playlist"
-        class="py-2 px-1"
+        class="close-btn"
         type="button"
         @click="isOpen = true"
       >
@@ -14,12 +14,12 @@
       </button>
     </header>
     <section
-      class="sidebar"
-      :class="{ open: isOpen }"
       :aria-hidden="!isOpen"
+      :class="{ open: isOpen }"
+      class="sidebar"
       @click.self="isOpen = false"
     >
-      <aside>
+      <aside class="menu">
         <button
           id="close"
           aria-label="Close playlist"
@@ -31,7 +31,12 @@
         </button>
 
         <ul id="playlist" class="">
-          <li v-for="track in playlist" :key="track.uid">
+          <li
+            v-for="track in playlist"
+            :key="track.uid"
+            :class="{ active: track.uid === currentTrack.uid }"
+            class="track"
+          >
             {{ track.name }}
           </li>
         </ul>
@@ -41,28 +46,33 @@
 </template>
 
 <script>
-import { Fragment } from 'vue-fragment'
-import { mapGetters } from 'vuex'
+import { Fragment } from "vue-fragment";
+import { mapGetters } from "vuex";
 
 export default {
-  name: 'Header',
+  name: "Header",
   components: { Fragment },
   data() {
     return {
       isOpen: false,
-    }
+    };
   },
   computed: {
     ...mapGetters({
-      playlist: 'player/playlist',
+      playlist: "player/playlist",
+      currentTrack: "player/currentTrack",
     }),
   },
-}
+};
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 header {
   @apply flex items-center justify-between;
+}
+
+.close-btn {
+  @apply text-4xl px-2 py-0.5;
 }
 
 .sidebar {
@@ -70,13 +80,22 @@ header {
   transition: transform 300ms ease-in-out;
   background-color: rgba(0, 0, 0, 0.1);
 
-  @apply absolute inset-0;
+  @apply absolute inset-0 z-1;
+
+  &.open {
+    transform: translateX(0);
+  }
 }
 
-aside {
-  @apply w-2/3 px-4 py-2 bg-gray-100 space-y-8 ml-auto h-full;
+.menu {
+  @apply w-2/3 px-4 py-2 bg-warm-gray-50 space-y-8 ml-auto h-full;
 }
-.open {
-  transform: translateX(0);
+
+.track {
+  @apply text-base px-4 cursor-pointer hover:bg-light-blue-200;
+
+  &.active {
+    @apply font-bold;
+  }
 }
 </style>

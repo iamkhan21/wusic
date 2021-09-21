@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 .card {
-  @apply flex flex-col max-w-lg w-full max-h-3xl h-full;
+  @apply flex flex-col max-w-lg w-full max-h-3xl h-full z-0;
 }
 
 .glass {
