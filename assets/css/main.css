@@ -1,0 +1,19 @@
+body {
+  font-size: 1.3rem;
+  font-family: 'Inter', sans-serif;
+
+  @apply bg-purple-50;
+}
+
+#__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  min-height: 100vh;
+
+  @apply container mx-auto px-4;
+}
+
+.container-centered {
+  @apply h-full flex justify-center items-center py-8;
+}
