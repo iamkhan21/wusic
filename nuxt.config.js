@@ -63,9 +63,6 @@ export default {
       name: "Wusic",
       description: "Wusic — music to help you focus",
     },
-    icon: {
-      source: "[srcDir]/[staticDir]/favicons/512.png",
-    },
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
