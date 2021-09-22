@@ -2,7 +2,7 @@
   <section class="card glass">
     <Header />
     <RotatingImage />
-    <Progress />
+<!--    <Progress />-->
     <TrackInfo />
     <Controls />
     <Footer />
@@ -13,13 +13,13 @@
 import Controls from "~/components/Player/Controls";
 import Footer from "~/components/Player/Footer";
 import Header from "~/components/Player/Header";
-import Progress from "~/components/Player/Progress";
+// import Progress from "~/components/Player/Progress";
 import RotatingImage from "~/components/Player/RotatingImage";
 import TrackInfo from "~/components/Player/TrackInfo";
 
 export default {
   name: "Player",
-  components: { RotatingImage, Footer, Controls, TrackInfo, Progress, Header },
+  components: { RotatingImage, Footer, Controls, TrackInfo,  Header },
 };
 </script>
 
