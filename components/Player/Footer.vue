@@ -1,6 +1,6 @@
 <template>
-  <footer class='text-center'>
-    <small class='text-sm'>
+  <footer class="text-center">
+    <small class="text-sm">
       Created by
       <a
         href="https://www.8byte.agency"
@@ -15,8 +15,8 @@
 
 <script>
 export default {
-  name: 'Footer',
-}
+  name: "Footer",
+};
 </script>
 
 <style scoped></style>

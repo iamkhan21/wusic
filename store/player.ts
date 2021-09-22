@@ -32,6 +32,10 @@ export const actions = {
     player.prevTrack();
     context.commit("changeTrack");
   },
+  selectTrack(context: any, trackUid: string) {
+    player.selectTrack(trackUid);
+    context.commit("changeTrack");
+  },
   async togglePlay(context: any) {
     if (player.isPlaying) {
       player.pause();

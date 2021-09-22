@@ -6,10 +6,9 @@ export type Track = {
 
 export default class Player {
   private _audio: HTMLAudioElement | null = null;
-  private _isPlaying = false;
 
   constructor(private readonly _playlist: Track[]) {
-    const track = this.searchPlayedTrack();
+    const track = this.getLastPlayedTrack();
     this._currentTrack = track || _playlist[0];
   }
 
@@ -21,7 +20,14 @@ export default class Player {
 
   private set currentTrack(value: Track) {
     localStorage.setItem("track", value.uid);
+
+    const isPlaying = this.isPlaying;
+
+    this.destroyAudio();
+
     this._currentTrack = value;
+
+    if (isPlaying) this.play();
   }
 
   get playlist(): Track[] {
@@ -29,45 +35,44 @@ export default class Player {
   }
 
   get isPlaying(): boolean {
-    return this._isPlaying;
+    return !(this._audio?.paused ?? true);
   }
 
   public nextTrack() {
-    this.destroyAudio();
     const currentIndex = this.getIndexOfCurrentTrack();
 
     let nextIndex = currentIndex + 1;
     if (nextIndex >= this.playlist.length) nextIndex = 0;
 
     this.currentTrack = this.playlist[nextIndex];
-
-    if (this._isPlaying) this.play();
   }
 
   public prevTrack() {
-    this.destroyAudio();
-
     const currentIndex = this.getIndexOfCurrentTrack();
 
     let nextIndex = currentIndex - 1;
     if (nextIndex < 0) nextIndex = this.playlist.length - 1;
 
     this.currentTrack = this.playlist[nextIndex];
-
-    if (this._isPlaying) this.play();
   }
 
   public async play() {
     if (!this._audio) this._audio = new Audio(this.currentTrack.url);
 
     await this._audio.play();
-
-    this._isPlaying = true;
   }
 
   public pause() {
     this._audio?.pause();
-    this._isPlaying = false;
+  }
+
+  public selectTrack(trackUid: string) {
+    if (!trackUid) return;
+
+    const selectedTrack = this.searchTrack(trackUid);
+    if (!selectedTrack) return;
+
+    this.currentTrack = selectedTrack;
   }
 
   private destroyAudio() {
@@ -75,10 +80,15 @@ export default class Player {
     this._audio = null;
   }
 
-  private searchPlayedTrack(): Track | undefined {
+  private searchTrack(trackUid: string): Track | undefined {
+    return this._playlist.find(({ uid }) => uid === trackUid);
+  }
+
+  private getLastPlayedTrack(): Track | undefined {
     const trackUid: string | null = localStorage.getItem("track");
     if (trackUid) {
-      return this._playlist.find(({ uid }) => uid === trackUid);
+      const track = this.searchTrack(trackUid);
+      if (track) return track;
     }
   }
 

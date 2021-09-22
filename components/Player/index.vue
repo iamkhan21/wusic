@@ -10,22 +10,22 @@
 </template>
 
 <script>
-import Controls from '~/components/Player/Controls'
-import Footer from '~/components/Player/Footer'
-import Header from '~/components/Player/Header'
-import Progress from '~/components/Player/Progress'
-import RotatingImage from '~/components/Player/RotatingImage'
-import TrackInfo from '~/components/Player/TrackInfo'
+import Controls from "~/components/Player/Controls";
+import Footer from "~/components/Player/Footer";
+import Header from "~/components/Player/Header";
+import Progress from "~/components/Player/Progress";
+import RotatingImage from "~/components/Player/RotatingImage";
+import TrackInfo from "~/components/Player/TrackInfo";
 
 export default {
-  name: 'Player',
+  name: "Player",
   components: { RotatingImage, Footer, Controls, TrackInfo, Progress, Header },
-}
+};
 </script>
 
 <style scoped>
 .card {
-  @apply flex flex-col max-w-lg w-full max-h-3xl h-full z-0;
+  @apply flex flex-col max-w-lg w-full max-h-3xl h-full z-0  px-4 py-2 rounded-2xl relative overflow-hidden;
 }
 
 .glass {

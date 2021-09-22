@@ -36,6 +36,7 @@
             :key="track.uid"
             :class="{ active: track.uid === currentTrack.uid }"
             class="track"
+            @click="selectTrack(track.uid)"
           >
             {{ track.name }}
           </li>
@@ -47,7 +48,7 @@
 
 <script>
 import { Fragment } from "vue-fragment";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "Header",
@@ -61,6 +62,15 @@ export default {
     ...mapGetters({
       playlist: "player/playlist",
       currentTrack: "player/currentTrack",
+    }),
+  },
+  methods: {
+    selectTrack(uid) {
+      this.isOpen = false;
+      this.select(uid);
+    },
+    ...mapActions({
+      select: "player/selectTrack",
     }),
   },
 };
