@@ -2,41 +2,306 @@
   {
     "uid": "01",
     "name": "Datassette",
-    "url": "https://datashat.net/music_for_programming_1-datassette.mp3"
+    "url": "http://datashat.net/music_for_programming_1-datassette.mp3"
   },
   {
     "uid": "02",
     "name": "Sunjammer",
-    "url": "https://datashat.net/music_for_programming_2-sunjammer.mp3"
+    "url": "http://datashat.net/music_for_programming_2-sunjammer.mp3"
   },
   {
     "uid": "03",
     "name": "Datassette",
-    "url": "https://datashat.net/music_for_programming_3-datassette.mp3"
+    "url": "http://datashat.net/music_for_programming_3-datassette.mp3"
   },
   {
     "uid": "04",
     "name": "Com Truise",
-    "url": "https://datashat.net/music_for_programming_4-com_truise.mp3"
+    "url": "http://datashat.net/music_for_programming_4-com_truise.mp3"
   },
   {
     "uid": "05",
     "name": "Abe Mangger",
-    "url": "https://datashat.net/music_for_programming_5-abe_mangger.mp3"
+    "url": "http://datashat.net/music_for_programming_5-abe_mangger.mp3"
   },
   {
     "uid": "06",
     "name": "Gods Of The New Age",
-    "url": "https://datashat.net/music_for_programming_6-gods_of_the_new_age.mp3"
+    "url": "http://datashat.net/music_for_programming_6-gods_of_the_new_age.mp3"
   },
   {
     "uid": "07",
     "name": "Tahlhoff Garten + Untitled",
-    "url": "https://datashat.net/music_for_programming_7-tahlhoff_garten_and_untitled.mp3"
+    "url": "http://datashat.net/music_for_programming_7-tahlhoff_garten_and_untitled.mp3"
+  },
+  {
+    "uid": "08",
+    "name": "Connectedness Locus",
+    "url": "http://datashat.net/music_for_programming_8-connectedness_locus.mp3"
+  },
+  {
+    "uid": "09",
+    "name": "Datassette",
+    "url": "http://datashat.net/music_for_programming_9-datassette.mp3"
+  },
+  {
+    "uid": "10",
+    "name": "Unity Gain Temple",
+    "url": "http://datashat.net/music_for_programming_10-unity_gain_temple.mp3"
+  },
+  {
+    "uid": "11",
+    "name": "Miles Tilmann",
+    "url": "http://datashat.net/music_for_programming_11-miles_tilmann.mp3"
+  },
+  {
+    "uid": "12",
+    "name": "Forgotten Light",
+    "url": "http://datashat.net/music_for_programming_12-forgotten_light.mp3"
+  },
+  {
+    "uid": "13",
+    "name": "Matt Whitehead",
+    "url": "http://datashat.net/music_for_programming_13-matt_whitehead.mp3"
+  },
+  {
+    "uid": "14",
+    "name": "Tahlhoff Garten + Untitled",
+    "url": "http://datashat.net/music_for_programming_14-tahlhoff_garten_and_untitled.mp3"
+  },
+  {
+    "uid": "15",
+    "name": "Dan Adeyemi",
+    "url": "http://datashat.net/music_for_programming_15-dan_adeyemi.mp3"
+  },
+  {
+    "uid": "16",
+    "name": "Silent Stelios",
+    "url": "http://datashat.net/music_for_programming_16-silent_stelios.mp3"
+  },
+  {
+    "uid": "17",
+    "name": "Graphplan",
+    "url": "http://datashat.net/music_for_programming_17-graphplan.mp3"
+  },
+  {
+    "uid": "18",
+    "name": "Konx Om Pax",
+    "url": "http://datashat.net/music_for_programming_18-konx_om_pax.mp3"
+  },
+  {
+    "uid": "19",
+    "name": "Hivemind",
+    "url": "http://datashat.net/music_for_programming_19-hivemind.mp3"
+  },
+  {
+    "uid": "20",
+    "name": "Uberdog",
+    "url": "http://datashat.net/music_for_programming_20-uberdog.mp3"
+  },
+  {
+    "uid": "21",
+    "name": "Idol Eyes",
+    "url": "http://datashat.net/music_for_programming_21-idol_eyes.mp3"
+  },
+  {
+    "uid": "22",
+    "name": "Mindaugaszq",
+    "url": "http://datashat.net/music_for_programming_22-mindaugaszq.mp3"
+  },
+  {
+    "uid": "23",
+    "name": "Panda Magic",
+    "url": "http://datashat.net/music_for_programming_23-panda_magic.mp3"
+  },
+  {
+    "uid": "24",
+    "name": "RITES",
+    "url": "http://datashat.net/music_for_programming_24-rites.mp3"
+  },
+  {
+    "uid": "25",
+    "name": "_nono_",
+    "url": "http://datashat.net/music_for_programming_25-_nono_.mp3"
+  },
+  {
+    "uid": "26",
+    "name": "Abstraction",
+    "url": "http://datashat.net/music_for_programming_26-abstraction.mp3"
+  },
+  {
+    "uid": "27",
+    "name": "Michael Hicks",
+    "url": "http://datashat.net/music_for_programming_27-michael_hicks.mp3"
+  },
+  {
+    "uid": "28",
+    "name": "Big War",
+    "url": "http://datashat.net/music_for_programming_28-big_war.mp3"
+  },
+  {
+    "uid": "29",
+    "name": "Luke Handsfree",
+    "url": "http://datashat.net/music_for_programming_29-luke_handsfree.mp3"
+  },
+  {
+    "uid": "30",
+    "name": "Matt Kruse",
+    "url": "http://datashat.net/music_for_programming_30-matt_kruse.mp3"
+  },
+  {
+    "uid": "31",
+    "name": "Datassette",
+    "url": "http://datashat.net/music_for_programming_31-datassette.mp3"
+  },
+  {
+    "uid": "32",
+    "name": "Chris Seddon",
+    "url": "http://datashat.net/music_for_programming_32-chris_seddon.mp3"
+  },
+  {
+    "uid": "33",
+    "name": "uuav",
+    "url": "http://datashat.net/music_for_programming_33-uuav.mp3"
+  },
+  {
+    "uid": "34",
+    "name": "Chukus",
+    "url": "http://datashat.net/music_for_programming_34-chukus.mp3"
+  },
+  {
+    "uid": "35",
+    "name": "Nadim Kobeissi",
+    "url": "http://datashat.net/music_for_programming_35-nadim_kobeissi.mp3"
+  },
+  {
+    "uid": "36",
+    "name": "Ea7_dmZ",
+    "url": "http://datashat.net/music_for_programming_36-ea7_dmz.mp3"
+  },
+  {
+    "uid": "37",
+    "name": "Lackluster",
+    "url": "http://datashat.net/music_for_programming_37-lackluster.mp3"
+  },
+  {
+    "uid": "38",
+    "name": "J.S. Aurelius",
+    "url": "http://datashat.net/music_for_programming_38-j_s_aurelius.mp3"
+  },
+  {
+    "uid": "39",
+    "name": "Kidding Kurrys",
+    "url": "http://datashat.net/music_for_programming_39-kidding_kurrys.mp3"
+  },
+  {
+    "uid": "40",
+    "name": "Mark Schneider",
+    "url": "http://datashat.net/music_for_programming_40-mark_schneider.mp3"
+  },
+  {
+    "uid": "41",
+    "name": "Sunjammer",
+    "url": "http://datashat.net/music_for_programming_41-sunjammer.mp3"
+  },
+  {
+    "uid": "42",
+    "name": "Datassette",
+    "url": "http://datashat.net/music_for_programming_42-datassette.mp3"
+  },
+  {
+    "uid": "43",
+    "name": "Hey Exit",
+    "url": "http://datashat.net/music_for_programming_43-hey_exit.mp3"
+  },
+  {
+    "uid": "44",
+    "name": "hukka",
+    "url": "http://datashat.net/music_for_programming_44-hukka.mp3"
+  },
+  {
+    "uid": "45",
+    "name": "Ehohroma",
+    "url": "http://datashat.net/music_for_programming_45-ehohroma.mp3"
+  },
+  {
+    "uid": "46",
+    "name": "Jo Johnson",
+    "url": "http://datashat.net/music_for_programming_46-jo_johnson.mp3"
+  },
+  {
+    "uid": "47",
+    "name": "Abe Mangger",
+    "url": "http://datashat.net/music_for_programming_47-abe_mangger.mp3"
+  },
+  {
+    "uid": "48",
+    "name": "Michael Hicks",
+    "url": "http://datashat.net/music_for_programming_48-michael_hicks.mp3"
+  },
+  {
+    "uid": "49",
+    "name": "Julien Mier",
+    "url": "http://datashat.net/music_for_programming_49-julien_mier.mp3"
+  },
+  {
+    "uid": "50",
+    "name": "Misc.",
+    "url": "http://datashat.net/music_for_programming_50-misc.works.mp3"
   },
   {
     "uid": "51",
     "name": "Mücha",
-    "url": "https://datashat.net/music_for_programming_51-mücha.mp3"
+    "url": "http://datashat.net/music_for_programming_51-m%C3%BCcha.mp3"
+  },
+  {
+    "uid": "52",
+    "name": "Inchindown",
+    "url": "http://datashat.net/music_for_programming_52-inchindown.mp3"
+  },
+  {
+    "uid": "53",
+    "name": "Beb Welten",
+    "url": "http://datashat.net/music_for_programming_53-beb_welten.mp3"
+  },
+  {
+    "uid": "54",
+    "name": "HLER",
+    "url": "http://datashat.net/music_for_programming_54-hler.mp3"
+  },
+  {
+    "uid": "55",
+    "name": "20 Jazz Funk Greats",
+    "url": "http://datashat.net/music_for_programming_55-20_jazz_funk_greats.mp3"
+  },
+  {
+    "uid": "56",
+    "name": "Forest Drive West",
+    "url": "http://datashat.net/music_for_programming_56-forest_drive_west.mp3"
+  },
+  {
+    "uid": "57",
+    "name": "Hainbach",
+    "url": "http://datashat.net/music_for_programming_57-hainbach.mp3"
+  },
+  {
+    "uid": "58",
+    "name": "OliSUn",
+    "url": "http://datashat.net/music_for_programming_58-olive_is_the_sun.mp3"
+  },
+  {
+    "uid": "59",
+    "name": "Miunau",
+    "url": "http://datashat.net/music_for_programming_59-miunau.mp3"
+  },
+  {
+    "uid": "60",
+    "name": "TUNDRA",
+    "url": "http://datashat.net/music_for_programming_60-tundra.mp3"
+  },
+  {
+    "uid": "61",
+    "name": "Linnley",
+    "url": "http://datashat.net/music_for_programming_61-linnley.mp3"
   }
 ]

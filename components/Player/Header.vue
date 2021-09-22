@@ -30,7 +30,7 @@
           &times;
         </button>
 
-        <ul id="playlist" class="">
+        <ul id="playlist" class="list">
           <li
             v-for="track in playlist"
             :key="track.uid"
@@ -98,7 +98,8 @@ header {
 }
 
 .menu {
-  @apply w-2/3 px-4 py-2 bg-warm-gray-50 space-y-8 ml-auto h-full;
+  max-width: 300px;
+  @apply flex flex-col items-start px-2 pt-2 pb-4 bg-warm-gray-50 space-y-4 ml-auto h-full;
 }
 
 .track {
@@ -107,5 +108,11 @@ header {
   &.active {
     @apply font-bold;
   }
+}
+
+.list {
+  flex-grow: 1;
+  overflow: auto;
+  width: 100%;
 }
 </style>
