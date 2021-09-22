@@ -11,7 +11,14 @@ export default {
       { hid: "description", name: "description", content: "" },
       { name: "format-detection", content: "telephone=no" },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", href: "/favicons/favicon.ico" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicons/icon.svg" },
+      {
+        rel: "apple-touch-icon",
+        href: "/favicons/apple-touch-icon.png",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -53,6 +60,11 @@ export default {
   pwa: {
     manifest: {
       lang: "en",
+      name: "Wusic",
+      description: "Wusic — music to help you focus",
+    },
+    icon: {
+      source: "[srcDir]/[staticDir]/favicons/512.png",
     },
   },
 
