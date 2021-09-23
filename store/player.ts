@@ -1,17 +1,19 @@
-import Player, { Track } from "~/domain/Player";
-import tracks from "~/content/tracks.json";
+import { player } from "~/domain";
+import { secondsToHRtime } from "~/utils/timings";
+import { Track } from "~/domain/Player";
 
 interface State {
   playlist: Track[];
   currentTrack: Track | null;
   isPlaying: boolean;
+  duration: number;
 }
-const player = new Player(tracks);
 
 export const state = (): State => ({
   playlist: player.playlist,
   isPlaying: player.isPlaying,
   currentTrack: player.currentTrack,
+  duration: 0,
 });
 
 export const mutations = {
@@ -20,6 +22,9 @@ export const mutations = {
   },
   togglePlay(state: State) {
     state.isPlaying = player.isPlaying;
+  },
+  setDuration(state: State, duration: number) {
+    state.duration = duration;
   },
 };
 
@@ -56,5 +61,9 @@ export const getters = {
   },
   isPlaying(state: State) {
     return state.isPlaying;
+  },
+  // HR - human readable
+  durationHR(state: State) {
+    return secondsToHRtime(state.duration);
   },
 };

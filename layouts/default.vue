@@ -5,20 +5,30 @@
 <script>
 import { createSnackbar } from "@snackbar/core";
 import "@snackbar/core/dist/snackbar.css";
+import { player } from "../domain";
+import { throttle } from "../utils/timings";
 
 export default {
-  async mounted() {
-    const workbox = await window.$workbox;
-
-    if (workbox) {
-      workbox.addEventListener("installed", (event) => {
-        if (event.isUpdate) {
-          this.showMessage();
-        }
-      });
-    }
+  mounted() {
+    this.checkUpdates();
+    const updateDuration = throttle(
+      (duration) => this.$store.commit("player/setDuration", duration),
+      1000
+    );
+    player.on("duration", updateDuration);
   },
   methods: {
+    async checkUpdates() {
+      const workbox = await window.$workbox;
+
+      if (workbox) {
+        workbox.addEventListener("installed", (event) => {
+          if (event.isUpdate) {
+            this.showMessage();
+          }
+        });
+      }
+    },
     showMessage() {
       const message = document.createElement("div");
       message.innerHTML = `We have new updates!<br/>  Reload page to see it :)`;

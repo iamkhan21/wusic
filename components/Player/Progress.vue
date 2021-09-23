@@ -1,12 +1,17 @@
 <template>
-  <section class="text-center">
-    <progress max="100" value="25"></progress>
-  </section>
+  <section class="text-center">{{ duration }}</section>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "Progress",
+  computed: {
+    ...mapGetters({
+      duration: "player/durationHR",
+    }),
+  },
 };
 </script>
 

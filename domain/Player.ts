@@ -5,11 +5,12 @@ export type Track = {
 };
 
 export default class Player {
+  private eventHandlers = new Map();
   private _audio: HTMLAudioElement | null = null;
 
   constructor(private readonly _playlist: Track[]) {
     const track = this.getLastPlayedTrack();
-    this._currentTrack = track || _playlist[0];
+    this.currentTrack = track || _playlist[0];
   }
 
   private _currentTrack: Track;
@@ -27,6 +28,10 @@ export default class Player {
 
     this._currentTrack = value;
 
+    this._audio = new Audio(value.url);
+    this._audio.onloadedmetadata = this.onLoadMetadata;
+    this._audio.ontimeupdate = this.onLoadMetadata;
+
     if (isPlaying) this.play();
   }
 
@@ -36,6 +41,29 @@ export default class Player {
 
   get isPlaying(): boolean {
     return !(this._audio?.paused ?? true);
+  }
+
+  public on(event: string, handler: (...arg: any[]) => void): void {
+    if (!this.eventHandlers.has(event)) {
+      this.eventHandlers.set(event, new Set());
+    }
+    this.eventHandlers.get(event).add(handler);
+  }
+
+  public off(event: string, handler: (...arg: any[]) => void): void {
+    const handlers = this.eventHandlers.get(event);
+    if (!handlers) return;
+
+    handlers.delete(handler);
+    if (handlers.size === 0) this.eventHandlers.delete(event);
+  }
+
+  public once(event: string, handler: (...arg: any[]) => void): void {
+    const listener_ = (...args: any[]) => {
+      this.off(event, listener_);
+      handler(...args);
+    };
+    this.on(event, listener_);
   }
 
   public nextTrack() {
@@ -57,8 +85,6 @@ export default class Player {
   }
 
   public async play() {
-    if (!this._audio) this._audio = new Audio(this.currentTrack.url);
-
     await this._audio.play();
   }
 
@@ -80,6 +106,13 @@ export default class Player {
     this._audio = null;
   }
 
+  private onLoadMetadata = () => {
+    if (!this._audio) return;
+
+    const data = this._audio.duration - this._audio.currentTime;
+    this.emit("duration", data);
+  };
+
   private searchTrack(trackUid: string): Track | undefined {
     return this._playlist.find(({ uid }) => uid === trackUid);
   }
@@ -89,6 +122,19 @@ export default class Player {
     if (trackUid) {
       const track = this.searchTrack(trackUid);
       if (track) return track;
+    }
+  }
+
+  private emit(event: string, ...data: unknown[]): void {
+    if (!this.eventHandlers.has(event)) return;
+
+    const handlers = this.eventHandlers.get(event);
+    for (const handler of handlers) {
+      try {
+        handler(...data);
+      } catch (err) {
+        console.error(err);
+      }
     }
   }
 
