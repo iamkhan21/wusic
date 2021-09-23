@@ -63,7 +63,6 @@ export default {
       name: "Wusic",
       description: "Wusic — music to help you focus",
     },
-    workbox: { skipWaiting: false },
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
