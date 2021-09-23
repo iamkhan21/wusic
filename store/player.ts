@@ -13,7 +13,7 @@ export const state = (): State => ({
   playlist: player.playlist,
   isPlaying: player.isPlaying,
   currentTrack: player.currentTrack,
-  duration: 0,
+  duration: player.duration,
 });
 
 export const mutations = {

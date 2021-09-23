@@ -49,6 +49,10 @@ export default class Player {
     return this._isPlaying;
   }
 
+  get duration(): number {
+    return this._audio.duration;
+  }
+
   public on(event: string, handler: (...arg: any[]) => void): void {
     if (!this.eventHandlers.has(event)) {
       this.eventHandlers.set(event, new Set());
