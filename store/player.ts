@@ -29,17 +29,14 @@ export const mutations = {
 };
 
 export const actions = {
-  nextTrack(context: any) {
+  nextTrack(_: any) {
     player.nextTrack();
-    context.commit("changeTrack");
   },
-  prevTrack(context: any) {
+  prevTrack(_: any) {
     player.prevTrack();
-    context.commit("changeTrack");
   },
-  selectTrack(context: any, trackUid: string) {
+  selectTrack(_: any, trackUid: string) {
     player.selectTrack(trackUid);
-    context.commit("changeTrack");
   },
   async togglePlay(context: any) {
     if (player.isPlaying) {

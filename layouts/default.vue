@@ -16,6 +16,7 @@ export default {
       1000
     );
     player.on("duration", updateDuration);
+    player.on("trackchanged", () => this.$store.commit("player/changeTrack"));
   },
   methods: {
     async checkUpdates() {

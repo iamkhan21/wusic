@@ -34,6 +34,8 @@ function addLeadingZero(num: number): string {
 }
 
 export const secondsToHRtime = (seconds: number): string => {
+  if (!seconds) return "Loading...";
+
   const h = addLeadingZero(Math.floor(seconds / 3600));
   const m = addLeadingZero(Math.floor((seconds % 3600) / 60));
   const s = addLeadingZero(Math.floor((seconds % 3600) % 60));

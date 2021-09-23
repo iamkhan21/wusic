@@ -6,11 +6,17 @@ export type Track = {
 
 export default class Player {
   private eventHandlers = new Map();
-  private _audio: HTMLAudioElement | null = null;
+  private _audio: HTMLAudioElement;
+  private _isPlaying = false;
 
   constructor(private readonly _playlist: Track[]) {
     const track = this.getLastPlayedTrack();
-    this.currentTrack = track || _playlist[0];
+    this._currentTrack = track || _playlist[0];
+
+    this._audio = new Audio(this._currentTrack.url);
+    this._audio.onloadedmetadata = this.onLoadMetadata;
+    this._audio.ontimeupdate = this.onLoadMetadata;
+    this._audio.onended = () => this.nextTrack();
   }
 
   private _currentTrack: Track;
@@ -22,15 +28,15 @@ export default class Player {
   private set currentTrack(value: Track) {
     localStorage.setItem("track", value.uid);
 
-    const isPlaying = this.isPlaying;
+    const isPlaying = this._isPlaying;
 
     this.destroyAudio();
 
     this._currentTrack = value;
 
-    this._audio = new Audio(value.url);
-    this._audio.onloadedmetadata = this.onLoadMetadata;
-    this._audio.ontimeupdate = this.onLoadMetadata;
+    this.emit("trackchanged");
+
+    this._audio.src = value.url;
 
     if (isPlaying) this.play();
   }
@@ -40,7 +46,7 @@ export default class Player {
   }
 
   get isPlaying(): boolean {
-    return !(this._audio?.paused ?? true);
+    return this._isPlaying;
   }
 
   public on(event: string, handler: (...arg: any[]) => void): void {
@@ -85,10 +91,12 @@ export default class Player {
   }
 
   public async play() {
+    this._isPlaying = true;
     await this._audio.play();
   }
 
   public pause() {
+    this._isPlaying = false;
     this._audio?.pause();
   }
 
@@ -102,8 +110,7 @@ export default class Player {
   }
 
   private destroyAudio() {
-    this._audio?.pause();
-    this._audio = null;
+    this._audio.pause();
   }
 
   private onLoadMetadata = () => {
