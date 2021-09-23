@@ -1,6 +1,7 @@
 export const debounce = (func: Function, delay: number) => {
   let inDebounce: NodeJS.Timeout;
   return function () {
+    // @ts-ignore
     const context = this;
     const args = arguments;
     clearTimeout(inDebounce);
@@ -12,6 +13,7 @@ export const throttle = (func: Function, limit: number) => {
   let lastFunc: NodeJS.Timeout;
   let lastRan: number;
   return function () {
+    // @ts-ignore
     const context = this;
     const args = arguments;
     if (!lastRan) {
