@@ -10,6 +10,7 @@ import { throttle } from "../utils/timings";
 
 export default {
   mounted() {
+
     this.checkUpdates();
     const updateDuration = throttle(
       (duration) => this.$store.commit("player/setDuration", duration),
@@ -17,6 +18,8 @@ export default {
     );
     player.on("duration", updateDuration);
     player.on("trackchanged", () => this.$store.commit("player/changeTrack"));
+
+    this.$store.commit("player/setDuration", player.duration);
   },
   methods: {
     async checkUpdates() {

@@ -26,19 +26,18 @@ export default class Player {
   }
 
   private set currentTrack(value: Track) {
-    localStorage.setItem("track", value.uid);
-
     const isPlaying = this._isPlaying;
 
     this.destroyAudio();
 
     this._currentTrack = value;
+    this._audio.src = value.url;
 
     this.emit("trackchanged");
 
-    this._audio.src = value.url;
-
     if (isPlaying) this.play();
+
+    localStorage.setItem("track", value.uid);
   }
 
   get playlist(): Track[] {
