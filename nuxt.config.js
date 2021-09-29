@@ -69,6 +69,7 @@ export default {
         "/icons/pause.svg",
         "/icons/play.svg",
         "/icons/prev.svg",
+        "/images/vinil.png",
       ],
     },
   },
