@@ -1,3 +1,5 @@
+import { PlayerErrors } from "./errors";
+
 export type Track = {
   uid: string;
   name: string;
@@ -7,9 +9,12 @@ export type Track = {
 export default class Player {
   private eventHandlers = new Map();
   private _audio: HTMLAudioElement;
-  private _isPlaying = false;
 
-  constructor(private readonly _playlist: Track[]) {
+  constructor(private readonly _playlist: Track[] = []) {
+    if (!_playlist.length) {
+      throw new Error(PlayerErrors.EMPTY_PLAYLIST);
+    }
+
     const track = this.getLastPlayedTrack();
     this._currentTrack = track || _playlist[0];
 
@@ -17,6 +22,12 @@ export default class Player {
     this._audio.onloadedmetadata = this.onLoadMetadata;
     this._audio.ontimeupdate = this.onLoadMetadata;
     this._audio.onended = () => this.nextTrack();
+  }
+
+  private _isPlaying = false;
+
+  get isPlaying(): boolean {
+    return this._isPlaying;
   }
 
   private _currentTrack: Track;
@@ -42,10 +53,6 @@ export default class Player {
 
   get playlist(): Track[] {
     return this._playlist;
-  }
-
-  get isPlaying(): boolean {
-    return this._isPlaying;
   }
 
   get duration(): number {
