@@ -63,6 +63,14 @@ export default {
       name: "Wusic",
       description: "Wusic — music to help you focus",
     },
+    workbox: {
+      offlineAssets: [
+        "/icons/next.svg",
+        "/icons/pause.svg",
+        "/icons/play.svg",
+        "/icons/prev.svg",
+      ],
+    },
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
