@@ -7,17 +7,23 @@
       height="320"
       src="/images/vinil.png"
       alt="Vinil record"
+      @click="play"
     />
   </section>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "RotatingImage",
   computed: {
     ...mapGetters({ isPlaying: "player/isPlaying" }),
+  },
+  methods: {
+    ...mapActions({
+      play: "player/togglePlay",
+    }),
   },
 };
 </script>
@@ -30,6 +36,7 @@ section {
 .animation {
   animation: spin 7s linear infinite;
   animation-play-state: paused;
+  cursor: pointer;
 }
 .animation-running {
   animation-play-state: running;
